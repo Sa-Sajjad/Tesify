@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".Weeabooify"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Weeabooify"
+        tools:targetApi="31" >
+        <activity
+            android:name=".choose_variant"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ProgressBar"
+            android:exported="false" />
+
+        <receiver
+            android:name=".services.BootCompletedReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.BackgroundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.Extras"
+            android:exported="false" />
+        <activity
+            android:name=".ui.Info"
+            android:exported="false" />
+        <activity
+            android:name=".ui.QsStyle"
+            android:exported="false" />
+        <activity
+            android:name=".ui.HomePage"
+            android:exported="false" />
+        <activity
+            android:name=".ui.WelcomePage"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

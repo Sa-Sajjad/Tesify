@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home Page List Items -->
+    <item name="home_monetColor" type="id" />
+    <item name="home_iconPack" type="id" />
+    <item name="home_brightnessBar" type="id" />
+    <item name="home_qsShape" type="id" />
+    <item name="home_qsStyle" type="id" />
+    <item name="home_notification" type="id" />
+    <item name="home_mediaPlayer" type="id" />
+    <item name="home_volumePanel" type="id" />
+    <item name="home_progressBar" type="id" />
+    <item name="home_extras" type="id" />
+    <item name="home_info" type="id" />
+
+    <!-- Icon Pack List -->
+    <item name="iconPack_aurora_container" type="id" />
+    <item name="iconPack_aurora_enable" type="id" />
+    <item name="iconPack_aurora_disable" type="id" />
+    <item name="iconPack_gradicon_container" type="id" />
+    <item name="iconPack_gradicon_enable" type="id" />
+    <item name="iconPack_gradicon_disable" type="id" />
+    <item name="iconPack_lorn_container" type="id" />
+    <item name="iconPack_lorn_enable" type="id" />
+    <item name="iconPack_lorn_disable" type="id" />
+    <item name="iconPack_plumpy_container" type="id" />
+    <item name="iconPack_plumpy_enable" type="id" />
+    <item name="iconPack_plumpy_disable" type="id" />
+
+    <!-- Brightness Bar List -->
+    <item name="brightnessBar_roundedClip_container" type="id" />
+    <item name="brightnessBar_roundedClip_bb" type="id" />
+    <item name="brightnessBar_roundedClip_auto_bb" type="id" />
+    <item name="brightnessBar_roundedClip_enable" type="id" />
+    <item name="brightnessBar_roundedClip_disable" type="id" />
+
+    <item name="brightnessBar_rounded_container" type="id" />
+    <item name="brightnessBar_rounded_bb" type="id" />
+    <item name="brightnessBar_rounded_auto_bb" type="id" />
+    <item name="brightnessBar_rounded_enable" type="id" />
+    <item name="brightnessBar_rounded_disable" type="id" />
+
+    <item name="brightnessBar_doubleLayer_container" type="id" />
+    <item name="brightnessBar_doubleLayer_bb" type="id" />
+    <item name="brightnessBar_doubleLayer_auto_bb" type="id" />
+    <item name="brightnessBar_doubleLayer_enable" type="id" />
+    <item name="brightnessBar_doubleLayer_disable" type="id" />
+
+    <item name="brightnessBar_shadedLayer_container" type="id" />
+    <item name="brightnessBar_shadedLayer_bb" type="id" />
+    <item name="brightnessBar_shadedLayer_auto_bb" type="id" />
+    <item name="brightnessBar_shadedLayer_enable" type="id" />
+    <item name="brightnessBar_shadedLayer_disable" type="id" />
+
+    <item name="brightnessBar_outline_container" type="id" />
+    <item name="brightnessBar_outline_bb" type="id" />
+    <item name="brightnessBar_outline_auto_bb" type="id" />
+    <item name="brightnessBar_outline_enable" type="id" />
+    <item name="brightnessBar_outline_disable" type="id" />
+
+    <item name="brightnessBar_leafy_outline_container" type="id" />
+    <item name="brightnessBar_leafy_outline_bb" type="id" />
+    <item name="brightnessBar_leafy_outline_auto_bb" type="id" />
+    <item name="brightnessBar_leafy_outline_enable" type="id" />
+    <item name="brightnessBar_leafy_outline_disable" type="id" />
+
+    <item name="brightnessBar_neumorph_container" type="id" />
+    <item name="brightnessBar_neumorph_bb" type="id" />
+    <item name="brightnessBar_neumorph_auto_bb" type="id" />
+    <item name="brightnessBar_neumorph_enable" type="id" />
+    <item name="brightnessBar_neumorph_disable" type="id" />
+
+    <item name="brightnessBar_inline_container" type="id" />
+    <item name="brightnessBar_inline_bb" type="id" />
+    <item name="brightnessBar_inline_auto_bb" type="id" />
+    <item name="brightnessBar_inline_enable" type="id" />
+    <item name="brightnessBar_inline_disable" type="id" />
+
+    <item name="brightnessBar_neumorph_outline_container" type="id" />
+    <item name="brightnessBar_neumorph_outline_bb" type="id" />
+    <item name="brightnessBar_neumorph_outline_auto_bb" type="id" />
+    <item name="brightnessBar_neumorph_outline_enable" type="id" />
+    <item name="brightnessBar_neumorph_outline_disable" type="id" />
+
+    <!-- QsShapes List -->
+    <item name="default_container" type="id" />
+    <item name="default_enable" type="id" />
+    <item name="default_disable" type="id" />
+    <item name="default_qstile1" type="id" />
+    <item name="default_qstile2" type="id" />
+    <item name="default_qstile3" type="id" />
+    <item name="default_qstile4" type="id" />
+    <item name="default_qstile_orientation" type="id" />
+
+    <item name="doubleLayer_container" type="id" />
+    <item name="doubleLayer_enable" type="id" />
+    <item name="doubleLayer_disable" type="id" />
+    <item name="doubleLayer_qstile1" type="id" />
+    <item name="doubleLayer_qstile2" type="id" />
+    <item name="doubleLayer_qstile3" type="id" />
+    <item name="doubleLayer_qstile4" type="id" />
+    <item name="doubleLayer_qstile_orientation" type="id" />
+
+    <item name="shadedLayer_container" type="id" />
+    <item name="shadedLayer_enable" type="id" />
+    <item name="shadedLayer_disable" type="id" />
+    <item name="shadedLayer_qstile1" type="id" />
+    <item name="shadedLayer_qstile2" type="id" />
+    <item name="shadedLayer_qstile3" type="id" />
+    <item name="shadedLayer_qstile4" type="id" />
+    <item name="shadedLayer_qstile_orientation" type="id" />
+
+    <item name="outline_container" type="id" />
+    <item name="outline_enable" type="id" />
+    <item name="outline_disable" type="id" />
+    <item name="outline_qstile1" type="id" />
+    <item name="outline_qstile2" type="id" />
+    <item name="outline_qstile3" type="id" />
+    <item name="outline_qstile4" type="id" />
+    <item name="outline_qstile_orientation" type="id" />
+
+    <item name="leafy_outline_container" type="id" />
+    <item name="leafy_outline_enable" type="id" />
+    <item name="leafy_outline_disable" type="id" />
+    <item name="leafy_outline_qstile1" type="id" />
+    <item name="leafy_outline_qstile2" type="id" />
+    <item name="leafy_outline_qstile3" type="id" />
+    <item name="leafy_outline_qstile4" type="id" />
+    <item name="leafy_qstile_orientation" type="id" />
+
+    <item name="neumorph_container" type="id" />
+    <item name="neumorph_enable" type="id" />
+    <item name="neumorph_disable" type="id" />
+    <item name="neumorph_qstile1" type="id" />
+    <item name="neumorph_qstile2" type="id" />
+    <item name="neumorph_qstile3" type="id" />
+    <item name="neumorph_qstile4" type="id" />
+    <item name="neumorph_qstile_orientation" type="id" />
+
+    <item name="surround_container" type="id" />
+    <item name="surround_enable" type="id" />
+    <item name="surround_disable" type="id" />
+    <item name="surround_qstile1" type="id" />
+    <item name="surround_qstile2" type="id" />
+    <item name="surround_qstile3" type="id" />
+    <item name="surround_qstile4" type="id" />
+    <item name="surround_qstile_orientation" type="id" />
+
+    <item name="bookmark_container" type="id" />
+    <item name="bookmark_enable" type="id" />
+    <item name="bookmark_disable" type="id" />
+    <item name="bookmark_qstile1" type="id" />
+    <item name="bookmark_qstile2" type="id" />
+    <item name="bookmark_qstile3" type="id" />
+    <item name="bookmark_qstile4" type="id" />
+    <item name="bookmark_qstile_orientation" type="id" />
+
+    <item name="neumorph_outline_container" type="id" />
+    <item name="neumorph_outline_enable" type="id" />
+    <item name="neumorph_outline_disable" type="id" />
+    <item name="neumorph_outline_qstile1" type="id" />
+    <item name="neumorph_outline_qstile2" type="id" />
+    <item name="neumorph_outline_qstile3" type="id" />
+    <item name="neumorph_outline_qstile4" type="id" />
+    <item name="neumorph_outline_qstile_orientation" type="id" />
+
+    <!-- Notification List -->
+    <item name="notif_default_container" type="id" />
+    <item name="notif_default_title" type="id" />
+    <item name="notif_default_enable" type="id" />
+    <item name="notif_default_disable" type="id" />
+    <item name="notif_default_arrow" type="id" />
+
+    <item name="notif_layers_container" type="id" />
+    <item name="notif_layers_title" type="id" />
+    <item name="notif_layers_enable" type="id" />
+    <item name="notif_layers_disable" type="id" />
+    <item name="notif_layers_arrow" type="id" />
+
+    <item name="notif_outline_container" type="id" />
+    <item name="notif_outline_title" type="id" />
+    <item name="notif_outline_enable" type="id" />
+    <item name="notif_outline_disable" type="id" />
+    <item name="notif_outline_arrow" type="id" />
+
+    <item name="notif_bottom_outline_container" type="id" />
+    <item name="notif_bottom_outline_title" type="id" />
+    <item name="notif_bottom_outline_enable" type="id" />
+    <item name="notif_bottom_outline_disable" type="id" />
+    <item name="notif_bottom_outline_arrow" type="id" />
+
+    <item name="notif_neumorph_container" type="id" />
+    <item name="notif_neumorph_title" type="id" />
+    <item name="notif_neumorph_enable" type="id" />
+    <item name="notif_neumorph_disable" type="id" />
+    <item name="notif_neumorph_arrow" type="id" />
+
+    <item name="notif_stack_container" type="id" />
+    <item name="notif_stack_title" type="id" />
+    <item name="notif_stack_enable" type="id" />
+    <item name="notif_stack_disable" type="id" />
+    <item name="notif_stack_arrow" type="id" />
+
+    <!-- QS Style List -->
+
+    <item name="qs_style_coloros_container" type="id" />
+    <item name="qs_style_coloros_image" type="id" />
+    <item name="qs_style_coloros_title" type="id" />
+    <item name="qs_style_coloros_desc" type="id" />
+    <item name="qs_style_coloros_enable" type="id" />
+    <item name="qs_style_coloros_disable" type="id" />
+
+    <item name="qs_style_descendant_container" type="id" />
+    <item name="qs_style_descendant_image" type="id" />
+    <item name="qs_style_descendant_title" type="id" />
+    <item name="qs_style_descendant_desc" type="id" />
+    <item name="qs_style_descendant_enable" type="id" />
+    <item name="qs_style_descendant_disable" type="id" />
+
+    <item name="qs_style_dotos_container" type="id" />
+    <item name="qs_style_dotos_image" type="id" />
+    <item name="qs_style_dotos_title" type="id" />
+    <item name="qs_style_dotos_desc" type="id" />
+    <item name="qs_style_dotos_enable" type="id" />
+    <item name="qs_style_dotos_disable" type="id" />
+
+    <item name="qs_style_miui_container" type="id" />
+    <item name="qs_style_miui_image" type="id" />
+    <item name="qs_style_miui_title" type="id" />
+    <item name="qs_style_miui_desc" type="id" />
+    <item name="qs_style_miui_enable" type="id" />
+    <item name="qs_style_miui_disable" type="id" />
+
+    <item name="qs_style_octavi_container" type="id" />
+    <item name="qs_style_octavi_image" type="id" />
+    <item name="qs_style_octavi_title" type="id" />
+    <item name="qs_style_octavi_desc" type="id" />
+    <item name="qs_style_octavi_enable" type="id" />
+    <item name="qs_style_octavi_disable" type="id" />
+
+    <item name="qs_style_oxygen_container" type="id" />
+    <item name="qs_style_oxygen_image" type="id" />
+    <item name="qs_style_oxygen_title" type="id" />
+    <item name="qs_style_oxygen_desc" type="id" />
+    <item name="qs_style_oxygen_enable" type="id" />
+    <item name="qs_style_oxygen_disable" type="id" />
+</resources>
