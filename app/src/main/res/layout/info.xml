@@ -63,7 +63,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Initial Release"
+                            android:text="By KaeruShi"
                             android:textColor="@color/textColorSecondary"
                             android:textSize="16dp" />
 
@@ -97,12 +97,12 @@
                                 android:layout_height="wrap_content"
                                 android:textStyle="bold"
                                 android:textColor="@color/textColorPrimary"
-                                android:text="Author"/>
+                                android:text="Iconify"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/textColorPrimary"
-                                android:text="KaeruShi"/>
+                                android:text="DrDisagree"/>
                         </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
