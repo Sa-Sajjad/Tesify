@@ -1,9 +1,6 @@
 package kaerushi.weeabooify.uwu.ui;
 
 import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,23 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import kaerushi.weeabooify.uwu.BuildConfig;
-import kaerushi.weeabooify.uwu.R;
-import kaerushi.weeabooify.uwu.Weeabooify;
-import kaerushi.weeabooify.uwu.config.PrefConfig;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.Objects;
 
+import kaerushi.weeabooify.uwu.R;
+import kaerushi.weeabooify.uwu.Weeabooify;
+import kaerushi.weeabooify.uwu.config.PrefConfig;
+
 public class Info extends AppCompatActivity {
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +40,16 @@ public class Info extends AppCompatActivity {
         TextView marqueeVariant = findViewById(R.id.txtVariant);
         marqueeVariant.setSelected(true);
         marqueeVersion.setSelected(true);
+        ImageView imgVariant = findViewById(R.id.imgVariant);
+
+        if (Objects.equals(PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRom"), "RR")) {
+            marqueeVariant.setText("Resurrection Remix");
+            imgVariant.setBackground(getResources().getDrawable(R.drawable.logo_rr));
+        } else if (Objects.equals(PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRom"), "Nusan")) {
+            marqueeVariant.setText("Nusantara");
+            imgVariant.setBackground(getResources().getDrawable(R.drawable.logo_nusa));
+        } else
+            marqueeVariant.setText("Unknown");
 
         // Credits
 

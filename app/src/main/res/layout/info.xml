@@ -12,8 +12,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
@@ -31,39 +31,39 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/container"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:layout_weight="1"
                     android:paddingHorizontal="20dp"
-                    android:paddingVertical="25dp"
-                    android:background="@drawable/container">
+                    android:paddingVertical="25dp">
 
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:foreground="@mipmap/ic_launcher" />
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:foreground="@mipmap/ic_launcher" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/app_name"
-                            android:layout_marginTop="10dp"
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="v1.0 | Initial Release"
-                            android:textColor="@color/textColorSecondary"
-                            android:textSize="16dp"
-                            android:singleLine="true"
-                            android:layout_marginTop="2dp"
-                            android:id="@+id/txtVersion"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:ellipsize="marquee"
-                            android:scrollHorizontally="true"/>
+                    <TextView
+                        android:id="@+id/txtVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="marquee"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text="v1.0 | Initial Release"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="16dp" />
 
                 </LinearLayout>
 
@@ -73,68 +73,78 @@
                     android:layout_marginStart="10dp"
                     android:gravity="center_vertical"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:paddingLeft="20dp"
-                        android:gravity="center_vertical"
                         android:layout_marginBottom="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/container">
+                        android:background="@drawable/container"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp">
+
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:src="@mipmap/ic_launcher"/>
+                            android:src="@mipmap/ic_launcher" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textStyle="bold"
+                                android:text="Author"
                                 android:textColor="@color/textColorPrimary"
-                                android:text="Author"/>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/textColorPrimary"
-                                android:text="KaeruShi"/>
+                                android:text="KaeruShi"
+                                android:textColor="@color/textColorPrimary" />
                         </LinearLayout>
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-                        android:paddingHorizontal="20dp"
+                        android:background="@drawable/container"
                         android:gravity="center_vertical"
-                        android:background="@drawable/container">
+                        android:paddingHorizontal="20dp">
+
                         <ImageView
+                            android:id="@+id/imgVariant"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:src="@mipmap/ic_launcher"/>
+                            android:src="@mipmap/ic_launcher" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textStyle="bold"
+                                android:text="Variant"
                                 android:textColor="@color/textColorPrimary"
-                                android:text="Variant"/>
+                                android:textStyle="bold" />
+
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/textColorPrimary"
-                                android:singleLine="true"
                                 android:id="@+id/txtVariant"
-                                android:marqueeRepeatLimit="marquee_forever"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:ellipsize="marquee"
+                                android:marqueeRepeatLimit="marquee_forever"
                                 android:scrollHorizontally="true"
-                                android:text="Resurrection Remix"/>
+                                android:singleLine="true"
+                                android:textColor="@color/textColorPrimary" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
