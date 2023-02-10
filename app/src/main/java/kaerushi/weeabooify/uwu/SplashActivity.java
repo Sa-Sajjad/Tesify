@@ -21,11 +21,13 @@ public class SplashActivity extends AppCompatActivity {
 
     static {
         Shell.enableVerboseLogging = BuildConfig.DEBUG;
-        Shell.setDefaultBuilder(Shell.Builder.create().setFlags(Shell.FLAG_REDIRECT_STDERR).setTimeout(10));
+        if (Shell.getCachedShell() == null)
+            Shell.setDefaultBuilder(Shell.Builder.create().setFlags(Shell.FLAG_REDIRECT_STDERR).setTimeout(20));
     }
 
+    private boolean keepShowing = true;
+
     private final int versionCode = BuildConfig.VERSION_CODE;
-    private final String versionName = BuildConfig.VERSION_NAME;
 
     public static SplashActivity getContext() {
         return mContext;
@@ -41,8 +43,10 @@ public class SplashActivity extends AppCompatActivity {
             Intent intent;
 
             if (RootUtil.isDeviceRooted() && RootUtil.isMagiskInstalled() && ModuleUtil.moduleExists() && OverlayUtils.overlayExists() && (versionCode == PrefConfig.loadPrefInt(this, "versionCode"))) {
+                keepShowing = false;
                 intent = new Intent(SplashActivity.this, HomePage.class);
             } else {
+                keepShowing = false;
                 intent = new Intent(SplashActivity.this, WelcomePage.class);
             }
 

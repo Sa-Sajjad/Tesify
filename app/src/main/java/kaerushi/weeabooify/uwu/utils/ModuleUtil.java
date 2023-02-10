@@ -86,6 +86,7 @@ public class ModuleUtil {
             e.printStackTrace();
         }
         String data_dir = context.getFilesDir().toString();
+
         // Clean temporary directory
         Shell.cmd("rm -rf " + data_dir).exec();
         File device_file = new File(data_dir + "/" + overlayFolder + "/");

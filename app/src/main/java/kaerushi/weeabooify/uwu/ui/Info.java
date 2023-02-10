@@ -18,6 +18,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import kaerushi.weeabooify.uwu.BuildConfig;
 import kaerushi.weeabooify.uwu.R;
+import kaerushi.weeabooify.uwu.Weeabooify;
+import kaerushi.weeabooify.uwu.config.PrefConfig;
+
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.Objects;
@@ -37,6 +40,11 @@ public class Info extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        TextView marqueeVersion = findViewById(R.id.txtVersion);
+        TextView marqueeVariant = findViewById(R.id.txtVariant);
+        marqueeVariant.setSelected(true);
+        marqueeVersion.setSelected(true);
 
         // Credits
 
