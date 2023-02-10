@@ -42,10 +42,10 @@ public class Info extends AppCompatActivity {
         marqueeVersion.setSelected(true);
         ImageView imgVariant = findViewById(R.id.imgVariant);
 
-        if (Objects.equals(PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRom"), "RR")) {
+        if (Objects.equals(PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant"), "RR")) {
             marqueeVariant.setText("Resurrection Remix");
             imgVariant.setBackground(getResources().getDrawable(R.drawable.logo_rr));
-        } else if (Objects.equals(PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRom"), "Nusan")) {
+        } else if (Objects.equals(PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant"), "Nusan")) {
             marqueeVariant.setText("Nusantara");
             imgVariant.setBackground(getResources().getDrawable(R.drawable.logo_nusa));
         } else
