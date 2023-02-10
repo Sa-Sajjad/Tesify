@@ -32,8 +32,6 @@ public class WelcomePage extends AppCompatActivity {
     private final int versionCode = BuildConfig.VERSION_CODE;
     private final String versionName = BuildConfig.VERSION_NAME;
     private LinearLayout spinner;
-    private RadioGroup radioGroup;
-    Button nusaVariant, rrVariant;
 
     @SuppressLint({"SetTextI18n", "NonConstantResourceId", "UseCompatLoadingForDrawables"})
     @Override
@@ -94,7 +92,7 @@ public class WelcomePage extends AppCompatActivity {
             else {
                 if (RootUtil.isDeviceRooted()) {
                     if (RootUtil.isMagiskInstalled()) {
-                        if ((PrefConfig.loadPrefInt(this, "versionCode") < versionCode) || !ModuleUtil.moduleExists()) {
+                        if ((PrefConfig.loadPrefInt(this, "versionCode") < versionCode) || !ModuleUtil.moduleExists() || !OverlayUtils.overlayExists()) {
 
                             // Show spinner
                             spinner.setVisibility(View.VISIBLE);
@@ -127,31 +125,8 @@ public class WelcomePage extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         } else {
-
-                            // Show spinner
-                            spinner.setVisibility(View.VISIBLE);
-
-                            // Block touch
-                            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
-                            Runnable runnable = () -> {
-                                try {
-                                    ModuleUtil.handleModule(Weeabooify.getAppContext());
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                                runOnUiThread(() -> {
-                                    // Hide spinner
-                                    spinner.setVisibility(View.GONE);
-                                    // Unblock touch
-                                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
-                                    warn.setVisibility(View.VISIBLE);
-                                    warning.setText("Reboot your device first!");
-                                });
-                            };
-                            Thread thread = new Thread(runnable);
-                            thread.start();
+                            warn.setVisibility(View.VISIBLE);
+                            warning.setText("Reboot your device first!");
                         }
                     } else {
                         warn.setVisibility(View.VISIBLE);

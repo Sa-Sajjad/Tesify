@@ -64,7 +64,8 @@ public class ModuleUtil {
                 "# More info in the main Magisk thread\n' > " + MODULE_DIR + "/service.sh").exec();
         Log.e("ModuleCheck", "Magisk module successfully created!");
 
-        copyOverlays(context);
+        String selectedRom = PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant");
+        copyOverlays(context, selectedRom);
     }
 
     public static boolean moduleExists() {
@@ -76,38 +77,38 @@ public class ModuleUtil {
         return false;
     }
 
-    static void copyOverlays(Context context) {
+    static void copyOverlays(Context context, String overlayFolder) {
+
         String[] overlays = new String[0];
-        String selectedRom = "Component/" + PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant");
         try {
-            overlays = context.getAssets().list(selectedRom);
+            overlays = context.getAssets().list(overlayFolder);
         } catch (IOException e) {
             e.printStackTrace();
         }
         String data_dir = context.getFilesDir().toString();
         // Clean temporary directory
         Shell.cmd("rm -rf " + data_dir).exec();
-        File device_file = new File(data_dir + "/" + selectedRom + "/");
-        Shell.cmd("mkdir -p " + data_dir + "/Component/").exec();
-        Shell.cmd("mkdir -p " + device_file).exec();
+        File device_file = new File(data_dir + "/" + overlayFolder + "/");
+        device_file.mkdirs();
 
         for (String overlay : overlays) {
-            File file = new File(data_dir + "/" + selectedRom +"/" + overlay);
+            File file = new File(data_dir + "/" + overlayFolder + "/" + overlay);
             if (!file.exists()) {
                 try {
-                    copyFileTo(context, selectedRom + "/" + overlay, data_dir + "/" + selectedRom + "/" + overlay);
+                    copyFileTo(context, overlayFolder + "/" + overlay, data_dir + "/" + overlayFolder + "/" + overlay);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-            Shell.cmd("cp -f " + data_dir + "/" + selectedRom + "/" + overlay + " " + OVERLAY_DIR + '/' + overlay).exec();
+            Shell.cmd("cp -f " + data_dir + "/" + overlayFolder + "/" + overlay + " " + OVERLAY_DIR + '/' + overlay).exec();
         }
         RootUtil.setPermissionsRecursively(644, OVERLAY_DIR + '/');
         // Clean temporary directory
-        Shell.cmd("rm -rf " + data_dir + "/" + selectedRom).exec();
+        Shell.cmd("rm -rf " + data_dir + "/" + overlayFolder).exec();
     }
 
     static void copyFileTo(Context c, String source, String destination) throws IOException {
+
         InputStream myInput;
         OutputStream myOutput = new FileOutputStream(destination);
         myInput = c.getAssets().open(source);
