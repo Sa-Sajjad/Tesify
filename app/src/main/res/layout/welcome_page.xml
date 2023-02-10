@@ -49,30 +49,66 @@
                 tools:ignore="SpUsage" />
         </LinearLayout>
 
-        <RadioGroup
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/radio_variant"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_weight="1"
+            <LinearLayout
                 android:id="@+id/nusa_variant"
-                android:text="Nusantara"
-                android:drawableTop="@mipmap/ic_launcher"/>
-            <RadioButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/container"
                 android:gravity="center"
-                android:layout_weight="1"
-                android:id="@+id/rr_variant"
-                android:text="Resurrection Remix"
-                android:drawableTop="@mipmap/ic_launcher"/>
+                android:orientation="vertical"
+                android:padding="24dp">
 
-        </RadioGroup>
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/logo_nusa"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Nusantara"
+                    android:textColor="@color/textColorPrimary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rr_variant"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/container"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/logo_rr"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Resurrection Remix"
+                    android:textColor="@color/textColorPrimary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,8 +122,6 @@
                 android:id="@+id/warn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/container_margin"
-                android:layout_marginRight="@dimen/container_margin"
                 android:layout_marginBottom="60dp"
                 android:background="@drawable/container"
                 android:gravity="left|center"
@@ -137,7 +171,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/button"
-                android:visibility="gone"
                 android:fontFamily="@font/semibold"
                 android:letterSpacing="0.15"
                 android:paddingStart="32dp"
@@ -149,6 +182,7 @@
                 android:textColor="@color/colorBackground"
                 android:textSize="22dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 tools:ignore="SpUsage" />
 
         </LinearLayout>
