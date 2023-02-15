@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="version"
                     android:background="@drawable/container"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -61,7 +62,7 @@
                         android:marqueeRepeatLimit="marquee_forever"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
-                        android:text="v1.0 | Initial Release"
+                        android:text="@string/version"
                         android:textColor="@color/textColorSecondary"
                         android:textSize="16dp" />
 
@@ -70,23 +71,24 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="8dp"
                     android:gravity="center_vertical"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:onClick="author"
                         android:layout_weight="1"
                         android:background="@drawable/container"
                         android:gravity="center_vertical"
                         android:paddingLeft="20dp">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:src="@mipmap/ic_launcher" />
+                            android:src="@drawable/kaerushi" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -113,15 +115,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
+                        android:clickable="true"
                         android:background="@drawable/container"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="20dp">
 
-                        <ImageView
+                        <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/imgVariant"
                             android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:src="@mipmap/ic_launcher" />
+                            android:layout_height="36dp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -168,72 +170,83 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/creditIcons8"
+                    android:id="@+id/creditIconify"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/container_top"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="2dp"
                     android:paddingStart="@dimen/container_paddingSide"
                     android:paddingTop="@dimen/container_padding"
                     android:paddingEnd="@dimen/container_paddingSide"
                     android:paddingBottom="@dimen/container_padding">
 
-                    <ImageView
-                        android:id="@+id/ic_link_icons8"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="left|center"
-                        android:backgroundTint="@color/textColorSecondary" />
-
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center"
-                        android:layout_marginLeft="@dimen/container_padding"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/credits"
+                        <ImageView
+                            android:src="@drawable/ic_launcher_fg"
+                            android:background="@drawable/ic_launcher_bg"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:padding="8dp"
+                            android:layout_gravity="left"
+                            android:backgroundTint="@color/ic_launcher_background" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
+                            android:layout_gravity="left|center"
+                            android:layout_marginLeft="@dimen/container_padding"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/creditsTo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/textColorSecondary"
-                            android:textSize="@dimen/cont_title_size2" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="16dp"
+                                android:text="Iconify"
+                                android:textStyle="bold" />
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="By DrDisagree"
+                                android:textColor="@color/textColorSecondary"
+                                android:textSize="@dimen/cont_title_size2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:text="Big thanks to the Dev who gave me permission and help to build Uwuify with Iconify Base."
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="16sp" />
+                        </LinearLayout>
                     </LinearLayout>
+
+
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/colorBackground" />
-
                 <LinearLayout
-                    android:id="@+id/jai"
+                    android:id="@+id/hyper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/container_mid"
                     android:orientation="horizontal"
+                    android:layout_marginBottom="2dp"
                     android:paddingStart="@dimen/container_paddingSide"
                     android:paddingTop="@dimen/container_padding"
                     android:paddingEnd="@dimen/container_paddingSide"
                     android:paddingBottom="@dimen/container_padding">
 
                     <ImageView
-                        android:id="@+id/img_jai"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:layout_gravity="left|center"
-                        android:backgroundTint="@color/textColorSecondary" />
-
+                        android:background="@drawable/ic_user"
+                        android:layout_gravity="left|center"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -243,177 +256,24 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/jaiName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="ɦʏքɛʀ.sɦ"
                             android:textColor="@color/textColorPrimary"
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/jaiDesc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="For helping me with the app."
                             android:textColor="@color/textColorSecondary"
                             android:textSize="@dimen/cont_title_size2" />
 
                     </LinearLayout>
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/colorBackground" />
-
                 <LinearLayout
-                    android:id="@+id/iperialf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/container_mid"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/container_paddingSide"
-                    android:paddingTop="@dimen/container_padding"
-                    android:paddingEnd="@dimen/container_paddingSide"
-                    android:paddingBottom="@dimen/container_padding">
-
-                    <ImageView
-                        android:id="@+id/img_iperialf"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="left|center"
-                        android:backgroundTint="@color/textColorSecondary" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center"
-                        android:layout_marginLeft="@dimen/container_padding"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/iperialfName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/iperialfDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/textColorSecondary"
-                            android:textSize="@dimen/cont_title_size2" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/colorBackground" />
-
-                <LinearLayout
-                    android:id="@+id/ritesh"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/container_mid"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/container_paddingSide"
-                    android:paddingTop="@dimen/container_padding"
-                    android:paddingEnd="@dimen/container_paddingSide"
-                    android:paddingBottom="@dimen/container_padding">
-
-                    <ImageView
-                        android:id="@+id/img_ritesh"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="left|center"
-                        android:backgroundTint="@color/textColorSecondary" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center"
-                        android:layout_marginLeft="@dimen/container_padding"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/riteshName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/riteshDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/textColorSecondary"
-                            android:textSize="@dimen/cont_title_size2" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/colorBackground" />
-
-                <LinearLayout
-                    android:id="@+id/sanely_insane"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/container_mid"
-                    android:orientation="horizontal"
-                    android:paddingStart="@dimen/container_paddingSide"
-                    android:paddingTop="@dimen/container_padding"
-                    android:paddingEnd="@dimen/container_paddingSide"
-                    android:paddingBottom="@dimen/container_padding">
-
-                    <ImageView
-                        android:id="@+id/img_sanely_insane"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="left|center"
-                        android:backgroundTint="@color/textColorSecondary" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left|center"
-                        android:layout_marginLeft="@dimen/container_padding"
-                        android:layout_weight="1.0"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/sanelyInsaneName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/sanelyInsaneDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/textColorSecondary"
-                            android:textSize="@dimen/cont_title_size2" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/colorBackground" />
-
-                <LinearLayout
-                    android:id="@+id/jaguar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/container_bottom"
@@ -424,11 +284,10 @@
                     android:paddingBottom="@dimen/container_padding">
 
                     <ImageView
-                        android:id="@+id/img_jaguar"
+                        android:background="@drawable/ic_user"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
-                        android:layout_gravity="left|center"
-                        android:backgroundTint="@color/textColorSecondary" />
+                        android:layout_gravity="left|center" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -439,7 +298,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/jaguarName"
+                            android:text="Erlk"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/textColorPrimary"
@@ -447,7 +306,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/jaguarDesc"
+                            android:text="For testing the app."
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/textColorSecondary"
@@ -455,6 +314,7 @@
 
                     </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
