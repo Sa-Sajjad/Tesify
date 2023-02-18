@@ -1,11 +1,11 @@
 package kaerushi.weeabooify.uwuify.utils;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.Log;
 
 import kaerushi.weeabooify.uwuify.BuildConfig;
-import kaerushi.weeabooify.uwuify.Weeabooify;
-import kaerushi.weeabooify.uwuify.config.PrefConfig;
+import kaerushi.weeabooify.uwuify.common.References;
 
 import com.topjohnwu.superuser.Shell;
 
@@ -27,14 +27,18 @@ public class ModuleUtil {
         if (moduleExists()) {
             Shell.cmd("rm -rf " + MODULE_DIR).exec();
         }
-        installModule(context);
+        installModule();
     }
 
-    static void installModule(Context context) {
+    static void installModule() throws IOException {
         Log.e("ModuleCheck", "Magisk module does not exist, creating!");
         // Clean temporary directory
         Shell.cmd("mkdir -p " + MODULE_DIR).exec();
-        Shell.cmd("printf 'id=Uwuify\nname=Uwuify\nversion=" + BuildConfig.VERSION_NAME + "\nversionCode=" + BuildConfig.VERSION_CODE + "\nauthor=@KaeruShi\ndescription=Systemless module for Uwuify.\n' > " + MODULE_DIR + "/module.prop").exec();
+        Shell.cmd("printf 'id=Uwuify\nname=Uwuify\nversion=" +
+                BuildConfig.VERSION_NAME + "\nversionCode=" +
+                BuildConfig.VERSION_CODE +
+                "\nauthor=@KaeruShi\ndescription=Systemless module for Uwuify.\n' > "
+                + MODULE_DIR + "/module.prop").exec();
         Shell.cmd("mkdir -p " + MODULE_DIR + "/common").exec();
         Shell.cmd("printf '#!/system/bin/sh\n" +
                 "# Do NOT assume where your module will be located.\n" +
@@ -64,8 +68,9 @@ public class ModuleUtil {
                 "# More info in the main Magisk thread\n' > " + MODULE_DIR + "/service.sh").exec();
         Log.e("ModuleCheck", "Magisk module successfully created!");
 
-        String selectedRom = PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant");
-        copyOverlays(context, selectedRom);
+
+        extractTools();
+        CompilerUtil.buildOverlays();
     }
 
     public static boolean moduleExists() {
@@ -75,6 +80,34 @@ public class ModuleUtil {
                 return true;
         }
         return false;
+    }
+
+    static void extractTools() {
+        String[] supported_abis = Build.SUPPORTED_ABIS;
+        boolean isArm64 = false;
+        for (String abi : supported_abis) {
+            if (abi.contains("arm64")) {
+                isArm64 = true;
+                break;
+            }
+        }
+
+        String folderName;
+        if (isArm64)
+            folderName = "arm64-v8a";
+        else
+            folderName = "armeabi-v7a";
+
+        try {
+            FileUtil.copyAssets("Tools");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Shell.cmd("cp -a " + References.DATA_DIR + "/Tools/" + folderName + "/. " + References.MODULE_DIR + "/tools").exec();
+            Shell.cmd("cp " + References.DATA_DIR + "/Tools/zip " + References.MODULE_DIR + "/tools").exec();
+            FileUtil.cleanDir("Tools");
+            RootUtil.setPermissionsRecursively(755, References.MODULE_DIR + "/tools");
+        }
     }
 
     static void copyOverlays(Context context, String overlayFolder) {
