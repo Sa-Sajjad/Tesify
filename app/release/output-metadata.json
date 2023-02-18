@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "kaerushi.weeabooify.uwu",
+  "applicationId": "kaerushi.weeabooify.uwuify",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "attributes": [],
       "versionCode": 1,
-      "versionName": "Test",
+      "versionName": "Initial Release",
       "outputFile": "app-release.apk"
     }
   ],

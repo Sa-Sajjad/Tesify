@@ -32,7 +32,7 @@
                 android:layout_marginTop="18dp"
                 android:text="Hi There!"
                 android:textColor="@color/textColorPrimary"
-                android:textSize="26dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 tools:ignore="SpUsage" />
 
@@ -71,8 +71,8 @@
                     android:orientation="vertical">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="@dimen/variant_img"
+                        android:layout_height="@dimen/variant_img"
                         android:scaleType="centerCrop"
                         android:src="@drawable/logo_nusa" />
 
@@ -104,8 +104,8 @@
                     android:orientation="vertical">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="@dimen/variant_img"
+                        android:layout_height="@dimen/variant_img"
                         android:scaleType="centerCrop"
                         android:src="@drawable/logo_rr" />
 
@@ -147,8 +147,8 @@
                     android:orientation="vertical">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="@dimen/variant_img"
+                        android:layout_height="@dimen/variant_img"
                         android:scaleType="centerCrop"
                         android:src="@drawable/logo_havoc" />
 
@@ -179,8 +179,8 @@
                     android:orientation="vertical">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="@dimen/variant_img"
+                        android:layout_height="@dimen/variant_img"
                         android:scaleType="centerCrop"
                         android:src="@drawable/logo_los" />
 

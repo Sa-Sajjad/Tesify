@@ -33,11 +33,11 @@ public class BackgroundService extends Service {
 
         HomePage.isServiceRunning = true;
 
-        Shell.getShell(shell -> {
-            ApplyOnBoot.applyCornerRadius();
-        });
-
-        startForeground();
+//        Shell.getShell(shell -> {
+//            ApplyOnBoot.applyCornerRadius();
+//        });
+//
+//        startForeground();
 
         return super.onStartCommand(intent, flags, startId);
     }
@@ -55,17 +55,10 @@ public class BackgroundService extends Service {
 
         PendingIntent pendingIntent = null;
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-            pendingIntent = PendingIntent.getActivity(this, 0,
-                    notificationIntent, PendingIntent.FLAG_MUTABLE);
-        } else {
-            pendingIntent = PendingIntent.getActivity(this, 0,
-                    notificationIntent, 0);
-        }
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.ic_launcher_fg)
+                .setSmallIcon(R.drawable.uwu)
                 .setContentTitle("Background Service")
                 .setContentText("Touch me, Please >.<")
                 .setContentIntent(pendingIntent)
