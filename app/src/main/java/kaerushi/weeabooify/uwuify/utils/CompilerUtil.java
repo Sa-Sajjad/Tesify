@@ -5,7 +5,9 @@ import static kaerushi.weeabooify.uwuify.utils.apksigner.CryptoUtils.readPrivate
 
 import android.util.Log;
 
+import kaerushi.weeabooify.uwuify.Weeabooify;
 import kaerushi.weeabooify.uwuify.common.References;
+import kaerushi.weeabooify.uwuify.config.PrefConfig;
 import kaerushi.weeabooify.uwuify.utils.apksigner.JarMap;
 import kaerushi.weeabooify.uwuify.utils.apksigner.SignAPK;
 import com.topjohnwu.superuser.Shell;
@@ -29,13 +31,13 @@ public class CompilerUtil {
         preExecute();
 
         // Create AndroidManifest.xml and build APK using AAPT
-        File dir = new File(References.DATA_DIR + "/Overlays");
+        File dir = new File(References.DATA_DIR + "/Overlays/" + PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant"));
         for (File pkg : Objects.requireNonNull(dir.listFiles())) {
             if (pkg.isDirectory()) {
                 for (File overlay : Objects.requireNonNull(pkg.listFiles())) {
                     if (overlay.isDirectory()) {
                         String overlay_name = overlay.toString().replace(pkg.toString() + '/', "");
-                        if (createManifest(overlay_name, pkg.toString().replace(References.DATA_DIR + "/Overlays/", ""), overlay.getAbsolutePath())) {
+                        if (createManifest(overlay_name, pkg.toString().replace(References.DATA_DIR + "/Overlays/" + PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant") + '/', ""), overlay.getAbsolutePath())) {
                             Log.e(TAG, "Failed to create Manifest for " + overlay_name + "! Exiting...");
                             postExecute(true);
                             return false;
