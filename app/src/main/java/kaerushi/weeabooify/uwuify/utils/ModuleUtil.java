@@ -23,14 +23,14 @@ public class ModuleUtil {
     public static final String MODULE_DIR = "/data/adb/modules/Uwuify";
     public static final String OVERLAY_DIR = "/data/adb/modules/Uwuify/system/product/overlay";
 
-    public static void handleModule(final Context context) throws IOException {
+    public static boolean handleModule() throws IOException {
         if (moduleExists()) {
-            Shell.cmd("rm -rf " + MODULE_DIR).exec();
+            Shell.cmd("rm -rf " + References.MODULE_DIR).exec();
         }
-        installModule();
+        return installModule();
     }
 
-    static void installModule() throws IOException {
+    static boolean installModule() throws IOException {
         Log.e("ModuleCheck", "Magisk module does not exist, creating!");
         // Clean temporary directory
         Shell.cmd("mkdir -p " + MODULE_DIR).exec();
@@ -70,7 +70,7 @@ public class ModuleUtil {
 
 
         extractTools();
-        CompilerUtil.buildOverlays();
+        return CompilerUtil.buildOverlays();
     }
 
     public static boolean moduleExists() {

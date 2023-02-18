@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="qs_quick_tile_size">60.0dip</dimen>
+    <dimen name="qs_tile_background_size">55.0dip</dimen>
+    <dimen name="qs_paged_tile_layout_padding_bottom">50.0dip</dimen>
+    <dimen name="qs_footer_icon_padding">15dp</dimen>
+    <dimen name="notification_side_paddings">10dp</dimen>
+    <dimen name="brightness_mirror_height">60dp</dimen>
+	<dimen name="notification_divider_height_increased">3dp</dimen>
+	<dimen name="notification_section_divider_height">5dp</dimen>
+	<dimen name="qs_notification_padding">10dp</dimen>
+	<dimen name="qs_header_tooltip_height">10dp</dimen>
+ <dimen name="config_dialogCornerRadius">10dp</dimen>
+</resources>

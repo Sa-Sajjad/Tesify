@@ -17,5 +17,6 @@
         <item>\n• Add Style OxygenOs</item>
     </string>
     <string name="version">v1.0 | Initial Release</string>
+    <string name="toast_error">Something Wrong</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

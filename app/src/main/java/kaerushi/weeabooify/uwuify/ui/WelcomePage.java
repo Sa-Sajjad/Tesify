@@ -28,6 +28,7 @@ import kaerushi.weeabooify.uwuify.utils.RootUtil;
 
 public class WelcomePage extends AppCompatActivity {
 
+    private static boolean hasErroredOut = false;
     private final int versionCode = BuildConfig.VERSION_CODE;
     private final String versionName = BuildConfig.VERSION_NAME;
     private LinearLayout spinner;
@@ -111,8 +112,10 @@ public class WelcomePage extends AppCompatActivity {
 
                             Runnable runnable = () -> {
                                 try {
-                                    ModuleUtil.handleModule(Weeabooify.getAppContext());
+                                    hasErroredOut = ModuleUtil.handleModule();
                                 } catch (IOException e) {
+                                    Toast.makeText(Weeabooify.getAppContext(), getResources().getString(R.string.toast_error), Toast.LENGTH_LONG).show();
+                                    hasErroredOut = true;
                                     e.printStackTrace();
                                 }
                                 runOnUiThread(() -> {

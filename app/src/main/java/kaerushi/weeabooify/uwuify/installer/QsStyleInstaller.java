@@ -20,7 +20,7 @@ public class QsStyleInstaller {
 
     private static void enable_pack(int n) {
 
-        String[] paths = {"/system/product/overlay/WeeabooifyComponentADDAS" + n + ".apk", "/system/product/overlay/WeeabooifyComponentQS" + n + ".apk"};
+        String[] paths = {"/system/product/overlay/UwuifyComponentADDAS" + n + ".apk", "/system/product/overlay/UwuifyComponentQS" + n + ".apk"};
 
         for (String path : paths) {
             if (new File(path).exists()) {
@@ -39,7 +39,7 @@ public class QsStyleInstaller {
 
     public static void disable_pack(int n) {
 
-        String[] paths = {"/system/product/overlay/WeeabooifyComponentADDAS" + n + ".apk", "/system/product/overlay/WeeabooifyComponentQS" + n + ".apk"};
+        String[] paths = {"/system/product/overlay/UwuifyComponentADDAS" + n + ".apk", "/system/product/overlay/UwuifyComponentQS" + n + ".apk"};
 
         for (String path : paths) {
             if (new File(path).exists()) {
@@ -59,10 +59,10 @@ public class QsStyleInstaller {
 
         for (int i = 1; i <= TOTAL_QSSTYLE; i++) {
             if (i != n) {
-                String[] paths = {"/system/product/overlay/WeeabooifyComponentADDAS" + i + ".apk", "/system/product/overlay/WeeabooifyComponentQS" + i + ".apk"};
+                String[] paths = {"/system/product/overlay/UwuifyComponentADDAS" + i + ".apk", "/system/product/overlay/UwuifyComponentQS" + i + ".apk"};
 
                 if (new File(paths[0]).exists()) {
-                    String overlay = "WeeabooifyComponentADDAS" + i + ".overlay";
+                    String overlay = "UwuifyComponentADDAS" + i + ".overlay";
                     try {
                         Shell.cmd("cmd overlay disable --user current " + overlay).exec();
                     } catch (Throwable t) {
@@ -71,7 +71,7 @@ public class QsStyleInstaller {
                 }
 
                 if (new File(paths[1]).exists()) {
-                    String overlay = "WeeabooifyComponentQS" + i + ".overlay";
+                    String overlay = "UwuifyComponentQS" + i + ".overlay";
                     try {
                         Shell.cmd("cmd overlay disable --user current " + overlay).exec();
                     } catch (Throwable t) {

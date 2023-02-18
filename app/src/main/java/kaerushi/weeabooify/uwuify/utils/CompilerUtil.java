@@ -25,7 +25,7 @@ public class CompilerUtil {
     private static final String aapt = References.TOOLS_DIR + "/libaapt.so";
     private static final String zipalign = References.TOOLS_DIR + "/libzipalign.so";
 
-    public static void buildOverlays() throws IOException {
+    public static boolean buildOverlays() throws IOException {
         preExecute();
 
         // Create AndroidManifest.xml and build APK using AAPT
@@ -38,12 +38,12 @@ public class CompilerUtil {
                         if (createManifest(overlay_name, pkg.toString().replace(References.DATA_DIR + "/Overlays/", ""), overlay.getAbsolutePath())) {
                             Log.e(TAG, "Failed to create Manifest for " + overlay_name + "! Exiting...");
                             postExecute(true);
-                            return;
+                            return false;
                         }
                         if (runAapt(overlay.getAbsolutePath(), overlay_name)) {
                             Log.e(TAG, "Failed to build " + overlay_name + "! Exiting...");
                             postExecute(true);
-                            return;
+                            return false;
                         }
                     }
                 }
@@ -57,7 +57,7 @@ public class CompilerUtil {
                 if (zipAlign(overlay.getAbsolutePath(), overlay.toString().replace(References.UNSIGNED_UNALIGNED_DIR + '/', "").replace("-unaligned", ""))) {
                     Log.e(TAG, "Failed to align " + overlay + "! Exiting...");
                     postExecute(true);
-                    return;
+                    return false;
                 }
             }
         }
@@ -69,12 +69,13 @@ public class CompilerUtil {
                 if (apkSigner(overlay.getAbsolutePath(), overlay.toString().replace(References.UNSIGNED_DIR + '/', "").replace("-unsigned", ""))) {
                     Log.e(TAG, "Failed to sign " + overlay + "! Exiting...");
                     postExecute(true);
-                    return;
+                    return false;
                 }
             }
         }
 
         postExecute(false);
+        return false;
     }
 
     private static void preExecute() throws IOException {

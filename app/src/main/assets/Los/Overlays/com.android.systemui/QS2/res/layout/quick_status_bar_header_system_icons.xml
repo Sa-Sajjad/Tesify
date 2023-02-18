@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@*com.android.systemui:id/quick_status_bar_system_icons" android:background="@android:color/transparent" android:paddingTop="@*com.android.systemui:dimen/status_bar_padding_top" android:clickable="true" android:layout_marginStart="-8dp" android:layout_marginEnd="-5dp" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="@*android:dimen/quick_qs_offset_height" 
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:systemui="http://schemas.android.com/apk/res-auto">
+  <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" >
+  <LinearLayout android:layout_width="wrap_content" android:orientation="vertical" android:layout_height="wrap_content" >
+    <android.widget.Space android:gravity="center" android:id="@*com.android.systemui:id/space" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" />
+    <include layout="@*com.android.systemui:layout/ongoing_privacy_chip" />
+    </LinearLayout>
+  <LinearLayout android:layout_width="wrap_content" android:layout_marginTop="5dp" android:orientation="vertical" android:layout_height="wrap_content" >
+            <TextClock
+                android:textColor="#ffff"
+                android:textSize="32sp"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh"
+                android:format24Hour="HH"
+                android:textAppearance="@*com.android.systemui:style/TextAppearance.QS.Status" />
+            <TextClock
+                android:textColor="#ffff"
+                android:textSize="32sp"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="mm"
+                android:format24Hour="mm"
+                android:textAppearance="@*com.android.systemui:style/TextAppearance.QS.Status" />
+            <TextClock
+                android:textColor="#ffff"
+                android:textSize="15sp"
+                android:singleLine="true"
+                android:textAllCaps="false"
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="EEE, dd MMM"
+                android:format24Hour="EEE, dd MMM"
+                android:textAppearance="@*com.android.systemui:style/TextAppearance.QS.Status" />
+  </LinearLayout>
+        <LinearLayout
+            android:paddingEnd="10.0dip"
+            android:gravity="end|top"
+            android:layout_gravity="end|top"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="end|top"
+                android:layout_gravity="end|top"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                
+               <com.android.keyguard.KeyguardSliceView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="end|center" android:layout_marginTop="20dip" android:layout_marginStart="60dip" android:maxWidth="160dp" android:layout_gravity="top|end|center" 
+                xmlns:android="http://schemas.android.com/apk/res/android" >
+    	         <com.android.systemui.util.AutoMarqueeTextView android:id="@*com.android.systemui:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="end|center" android:textColor="#ffff" android:paddingEnd="10dp" android:maxWidth="160dp" android:singleLine="true" android:textSize="14.0dp" android:drawableLeft="@*com.android.systemui:drawable/ic_music_note" android:drawablePadding="2dp" android:drawableTint="#ffff" android:letterSpacing="0.04" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" android:scrollHorizontally="true"/>
+    	            <RelativeLayout android:id="@*com.android.systemui:id/row_maincenter" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    	            <view class="com.android.keyguard.KeyguardSliceView$Row" android:layoutDirection="rtl" android:id="@*com.android.systemui:id/row" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    	            </RelativeLayout>
+    	</com.android.keyguard.KeyguardSliceView>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|top"
+                android:gravity="end|top"
+                android:textSize="20sp"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                android:text="@*com.android.systemui:string/stream_system_enforced" />
+        </LinearLayout>
+            <FrameLayout
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10.0dip"
+                android:background="@*com.android.systemui:drawable/mm_mouth2"
+                android:layout_marginBottom="5.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp">
+    <LinearLayout android:layout_gravity="start|center" android:orientation="horizontal" android:id="@*com.android.systemui:id/qsb_daily_data_usage_layout" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="0dip">
+        <ImageView android:id="@*com.android.systemui:id/qsb_daily_data_usage_icon" android:layout_width="wrap_content" android:tint="?android:colorForeground" android:layout_height="16.0sp" android:src="@*com.android.systemui:drawable/ic_data_saver_off" />
+        <com.android.systemui.statusbar.info.DataUsageView android:textAppearance="@*com.android.systemui:style/TextAppearance.StatusBar.Clock" android:gravity="end|center" android:id="@*com.android.systemui:id/qsb_data_sim_usage" android:layout_marginStart="5.0dip" android:textColor="?android:colorForeground" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="end|center">
+                <com.android.systemui.statusbar.phone.StatusIconContainer
+                    android:id="@*com.android.systemui:id/statusIcons"
+                    android:layout_gravity="end|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="3.0dip" />
+    <com.android.systemui.BatteryMeterView android:textAppearance="@*com.android.systemui:style/TextAppearance.StatusBar.Clock" android:gravity="end|center" android:id="@*com.android.systemui:id/batteryRemainingIcon" android:layout_width="wrap_content" android:layout_height="18dp" android:paddingStart="@*com.android.systemui:dimen/status_bar_start_padding" systemui:showDark="false" />
+    </LinearLayout>
+  </FrameLayout>
+  
+  
+  
+  
+    <LinearLayout android:gravity="start|center" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="0.0dip" >
+        <com.android.systemui.statusbar.policy.Clock android:textAppearance="@*com.android.systemui:style/TextAppearance.StatusBar.Clock" android:gravity="start|center" android:id="@*com.android.systemui:id/clock" android:layout_width="0.0dip" android:layout_height="0.0dip" android:minWidth="48.0dip" android:singleLine="true" android:paddingStart="@*com.android.systemui:dimen/status_bar_start_padding" android:paddingEnd="@*com.android.systemui:dimen/status_bar_end_padding" systemui:showDark="false" />
+    </LinearLayout>
+    <com.android.systemui.statusbar.policy.NetworkTrafficQS android:gravity="center|right" android:id="@*com.android.systemui:id/networkTraffic" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:singleLine="false" android:lineSpacingMultiplier="1.2" android:paddingEnd="@*com.android.systemui:dimen/status_bar_end_padding" android:layout_marginStart="2.0dip" android:layout_marginEnd="2.0dip" systemui:showDark="false" />
+ </FrameLayout>
+</LinearLayout>

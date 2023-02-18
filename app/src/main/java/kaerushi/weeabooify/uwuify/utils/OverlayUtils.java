@@ -8,11 +8,11 @@ import java.util.List;
 public class OverlayUtils {
 
     public static List<String> getOverlayList() {
-        return Shell.cmd("cmd overlay list |  grep -E '^....WeeabooifyComponent' | sed -E 's/^....//'").exec().getOut();
+        return Shell.cmd("cmd overlay list |  grep -E '^....UwuifyComponent' | sed -E 's/^....//'").exec().getOut();
     }
 
     public static List<String> getEnabledOverlayList() {
-        return Shell.cmd("cmd overlay list |  grep -E '^.x..WeeabooifyComponent' | sed -E 's/^.x..//'").exec().getOut();
+        return Shell.cmd("cmd overlay list |  grep -E '^.x..UwuifyComponent' | sed -E 's/^.x..//'").exec().getOut();
     }
 
     public static boolean isOverlayEnabled(List<String> overlays, String pkgName) {
@@ -48,7 +48,7 @@ public class OverlayUtils {
     }
 
     public static boolean overlayExists() {
-        File f = new File("/system/product/overlay/WeeabooifyComponentADDAS1.apk");
+        File f = new File("/system/product/overlay/UwuifyComponentADDAS1.apk");
         return (f.exists() && !f.isDirectory());
     }
 }

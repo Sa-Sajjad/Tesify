@@ -42,7 +42,7 @@ public class References {
     public static final String SharedXPref = Weeabooify.getAppContext().getPackageName() + "_xpreference";
 
     // Xposed mods
-    public static final String RESOURCE_TEMP_DIR = Environment.getExternalStorageDirectory() + "/.Weeabooify_files";
+    public static final String RESOURCE_TEMP_DIR = Environment.getExternalStorageDirectory() + "/.Uwuifyify_files";
     public static final String QSTRANSPARENCY_SWITCH = "xposed_qstransparency";
     public static final String QSALPHA_LEVEL = "xposed_qsalpha";
     public static final String STATUSBAR_CLOCKBG_SWITCH = "xposed_sbclockbg";
