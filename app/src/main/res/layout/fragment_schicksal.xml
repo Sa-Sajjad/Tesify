@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="24dp"
+    android:background="@android:color/transparent"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondary_variant"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="15.0dp"
+                android:src="@drawable/sc" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25.0dp"
+                android:gravity="bottom"
+                android:textSize="22sp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="@color/textColorPrimary"
+                android:id="@+id/variant_title"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25.0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="100dp"
+                android:textSize="16sp"
+                android:textColor="@color/textColorPrimary"
+                android:id="@+id/variant_detail"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:id="@+id/btnVariant"
+        android:background="@drawable/button_variant"
+        android:stateListAnimator="@null"
+        android:backgroundTint="@color/primary_variant"
+        android:textColor="#fff"
+        android:text="Buy Now"
+        android:layout_margin="25.0dp"
+        android:letterSpacing="0.05"
+        android:textSize="16sp"
+        android:paddingHorizontal="20dp"
+        android:textAllCaps="false"/>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "503630822959",
+    "project_id": "uwuify-c2383",
+    "storage_bucket": "uwuify-c2383.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503630822959:android:0e117f09a3d899133950da",
+        "android_client_info": {
+          "package_name": "kaerushi.weeabooify.uwuify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503630822959-7i7l89n928jb14r8nkrm9vn38pece55n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB50XBMZR5eQiOi_YJy5AuWrcDBSKKp6Qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503630822959-7i7l89n928jb14r8nkrm9vn38pece55n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
