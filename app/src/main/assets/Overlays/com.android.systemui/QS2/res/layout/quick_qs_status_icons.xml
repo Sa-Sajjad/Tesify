@@ -4,7 +4,7 @@
   xmlns:systemui="http://schemas.android.com/apk/res-auto" >
     <LinearLayout android:gravity="top|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="match_parent">
       <LinearLayout android:layout_gravity="left|center|top" android:paddingStart="20.0dip" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="105dp" >
-        <com.android.systemui.statusbar.policy.DateView android:id="@*com.android.systemui:id/date" android:layout_width="0.0dip" android:layout_height="wrap_content" android:gravity="start|center" android:singleLine="true" android:paddingStart="0.0dip"  android:textAppearance="@*com.android.systemui:style/TextAppearance.QS.Status" systemui:datePattern="@*com.android.systemui:string/abbrev_wday_month_day_no_year_alarm" />
+        <com.android.systemui.statusbar.policy.DateView android:id="@*com.android.systemui:id/date" android:layout_width="0.0dip" android:layout_height="wrap_content" android:gravity="start|center" android:singleLine="true" android:paddingStart="0.0dip"  android:textAppearance="@*com.android.systemui:style/TextAppearance.QS.Status"  />
        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_gravity="start|center">
        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="start|center">
          <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:layout_gravity="center" android:textSize="32sp" android:textColor="#000000" android:text="Hi, "/>
@@ -23,7 +23,7 @@
          
        </LinearLayout>
          <com.android.systemui.statusbar.phone.StatusIconContainer android:id="@*com.android.systemui:id/statusIcons" android:tint="@android:color/white" android:layout_width="0dp" android:layout_height="0dp" android:layout_marginRight="0dip" android:layout_weight="0"/>
-         <com.android.systemui.BatteryMeterView android:id="@*com.android.systemui:id/batteryRemainingIcon" android:tint="@android:color/white" android:layout_width="0dp" android:layout_height="0dp" android:padding="2dp" android:paddingLeft="0dp" systemui:textAppearance="@*com.android.systemui:style/TextAppearance.QS.Status" />
+         <com.android.systemui.BatteryMeterView android:id="@*com.android.systemui:id/batteryRemainingIcon" android:tint="@android:color/white" android:layout_width="0dp" android:layout_height="0dp" android:padding="2dp" android:paddingLeft="0dp" />
      <ImageView android:src="@*com.android.systemui:drawable/dessert_ics" android:layout_marginBottom="0.0dip" android:paddingBottom="0dp" android:layout_width="100dp" android:layout_height="100dp" android:scaleType="centerCrop" />
      <View android:layout_marginBottom="0.0dip" android:paddingBottom="0dp" android:layout_width="40dp" android:layout_height="50dp" android:scaleType="centerCrop" />
        </LinearLayout>

@@ -17,18 +17,18 @@ public class References {
     public static final int TOTAL_RADIUS = Shell.cmd("cmd overlay list |  grep -E '^....WeeabooifyComponentCR' | sed -E 's/^....//'").exec().getOut().size();
 
     // Storage location
-    public static final String MODULE_DIR = "/data/adb/modules/Weeabooify";
+    public static final String MODULE_DIR = "/data/adb/modules/Uwuify";
     public static final String DATA_DIR = Weeabooify.getAppContext().getFilesDir().toString();
     public static final String OVERLAY_DIR = MODULE_DIR + "/system/product/overlay";
     public static final String TOOLS_DIR = MODULE_DIR + "/tools";
-    public static final String TEMP_DIR = Environment.getExternalStorageDirectory().getAbsolutePath() + "/.Weeabooify";
+    public static final String TEMP_DIR = Environment.getExternalStorageDirectory().getAbsolutePath() + "/.Uwuify";
     public static final String TEMP_OVERLAY_DIR = TEMP_DIR + "/overlays";
     public static final String UNSIGNED_UNALIGNED_DIR = TEMP_DIR + "/overlays/unsigned_unaligned";
     public static final String UNSIGNED_DIR = TEMP_DIR + "/overlays/unsigned";
     public static final String SIGNED_DIR = TEMP_DIR + "/overlays/signed";
     public static final String COMPANION_TEMP_DIR = TEMP_DIR + "/companion";
     public static final String COMPANION_COMPILED_DIR = COMPANION_TEMP_DIR + "/compiled";
-    public static final String COMPANION_MODULE_DIR = TEMP_DIR + "/module/WeeabooifyCompanion";
+    public static final String COMPANION_MODULE_DIR = TEMP_DIR + "/module/UwuifyCompanion";
     public static final String COMPANION_RES_DIR = COMPANION_MODULE_DIR + "/substratumXML/SystemUI/res";
     public static final String COMPANION_DRAWABLE_DIR = COMPANION_RES_DIR + "/drawable";
     public static final String COMPANION_LAYOUT_DIR = COMPANION_RES_DIR + "/layout";

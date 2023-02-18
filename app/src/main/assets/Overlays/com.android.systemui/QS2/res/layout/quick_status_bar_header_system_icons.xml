@@ -94,8 +94,7 @@
                     android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="5.0dip"
-                    systemui:showDark="false" />
+                    android:paddingStart="5.0dip" />
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
@@ -139,8 +138,7 @@
                     android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    systemui:showDark="false" />
+                    android:singleLine="true" />
             </LinearLayout>
             <LinearLayout
                 android:gravity="end|bottom"
@@ -192,8 +190,7 @@
             android:layout_height="0dp"
             android:singleLine="true"
             android:paddingStart="@*com.android.systemui:dimen/status_bar_left_clock_starting_padding"
-            android:paddingEnd="@*com.android.systemui:dimen/status_bar_left_clock_end_padding"
-            systemui:showDark="false" />
+            android:paddingEnd="@*com.android.systemui:dimen/status_bar_left_clock_end_padding" />
     </LinearLayout>
     <android.widget.Space
         android:layout_gravity="end|"
