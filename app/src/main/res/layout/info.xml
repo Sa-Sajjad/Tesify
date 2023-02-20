@@ -298,7 +298,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:text="Erlk"
+                            android:text="Tester App"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/textColorPrimary"
@@ -306,7 +306,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:text="For testing the app."
+                            android:text="@string/Tester"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/textColorSecondary"

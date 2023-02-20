@@ -3,13 +3,20 @@ package kaerushi.weeabooify.uwuify.utils;
 import static kaerushi.weeabooify.uwuify.utils.apksigner.CryptoUtils.readCertificate;
 import static kaerushi.weeabooify.uwuify.utils.apksigner.CryptoUtils.readPrivateKey;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
+import kaerushi.weeabooify.uwuify.R;
 import kaerushi.weeabooify.uwuify.Weeabooify;
 import kaerushi.weeabooify.uwuify.common.References;
 import kaerushi.weeabooify.uwuify.config.PrefConfig;
 import kaerushi.weeabooify.uwuify.utils.apksigner.JarMap;
 import kaerushi.weeabooify.uwuify.utils.apksigner.SignAPK;
+
 import com.topjohnwu.superuser.Shell;
 
 import java.io.File;
@@ -45,6 +52,13 @@ public class CompilerUtil {
                         if (runAapt(overlay.getAbsolutePath(), overlay_name)) {
                             Log.e(TAG, "Failed to build " + overlay_name + "! Exiting...");
                             postExecute(true);
+                            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    // write your code here
+                                    Toast.makeText(Weeabooify.getAppContext(), "Failed", Toast.LENGTH_LONG).show();
+                                }
+                            });
                             return false;
                         }
                     }

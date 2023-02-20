@@ -23,7 +23,7 @@ public class FragmentSC extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return (ViewGroup)inflater.inflate(R.layout.fragment_schicksal, container, false);
+        return inflater.inflate(R.layout.fragment_schicksal, container, false);
     }
 
     @Override

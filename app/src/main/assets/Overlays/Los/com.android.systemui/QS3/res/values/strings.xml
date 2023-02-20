@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="clear_all_notifications_text">Clear</string>
-    <string name="notification_section_header_gentle">Silent</string>
-</resources>

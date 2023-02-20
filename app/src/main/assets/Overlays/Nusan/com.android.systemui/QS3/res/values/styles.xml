@@ -4,8 +4,8 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:homeAsUpIndicator">@*com.android.systemui:drawable/ic_arrow_back</item>
         <item name="android:colorError">@*android:color/error_color_material_dark</item>
-        <item name="darkIconTheme">@*com.android.systemui:style/QSIconTheme</item>
-        <item name="lightIconTheme">@*com.android.systemui:style/QSIconTheme</item>
+        <item name="*com.android.systemui:darkIconTheme">@*com.android.systemui:style/QSIconTheme</item>
+        <item name="*com.android.systemui:lightIconTheme">@*com.android.systemui:style/QSIconTheme</item>
         <item name="android:textColorTertiary">?android:colorAccent</item>
 <!-- QS inactive tile color -->
         <item name="android:textColorSecondary">#F1000000</item>

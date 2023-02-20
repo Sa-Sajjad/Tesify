@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<dimen name="qs_header_tooltip_height">175dp</dimen>
-	<dimen name="qs_panel_padding_bottom">80dp</dimen>
-	<dimen name="qs_panel_padding_top">190dp</dimen>
-</resources>

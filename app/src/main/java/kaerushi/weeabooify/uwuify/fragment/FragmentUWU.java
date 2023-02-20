@@ -21,7 +21,7 @@ public class FragmentUWU extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return (ViewGroup)inflater.inflate(R.layout.fragment_uwu, container, false);
+        return inflater.inflate(R.layout.fragment_uwu, container, false);
     }
 
     @Override

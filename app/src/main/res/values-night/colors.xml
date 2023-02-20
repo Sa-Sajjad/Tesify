@@ -6,7 +6,6 @@
     <color name="colorBackground">#17171a</color>
     <color name="colorContainer">#222228</color>
     <color name="textColorPrimary">@color/white</color>
-    <color name="textColorPrimaryInverse">@color/black</color>
     <color name="textColorSecondary">#FF69788A</color>
     <color name="textColorSecondaryLight">#B3FFFFFF</color>
     <color name="colorSuccess">#FFB7F7C4</color>

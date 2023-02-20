@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.android.systemui.privacy.OngoingPrivacyChip android:gravity="center_vertical" android:layout_gravity="end|center" android:orientation="horizontal" android:id="@*com.android.systemui:id/privacy_chip" android:focusable="true" android:layout_width="0dp" android:layout_height="0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@*com.android.systemui:id/background" android:layout_width="0dp" android:layout_height="0dp" android:minWidth="0dip">
-        <LinearLayout android:gravity="center_vertical" android:id="@*com.android.systemui:id/icons_container" android:layout_width="0dp" android:layout_height="0dp" />
-    </FrameLayout>
-</com.android.systemui.privacy.OngoingPrivacyChip>

@@ -25,8 +25,6 @@ public class SplashActivity extends AppCompatActivity {
             Shell.setDefaultBuilder(Shell.Builder.create().setFlags(Shell.FLAG_REDIRECT_STDERR).setTimeout(20));
     }
 
-    private boolean keepShowing = true;
-
     private final int versionCode = BuildConfig.VERSION_CODE;
 
     public static SplashActivity getContext() {
@@ -43,10 +41,8 @@ public class SplashActivity extends AppCompatActivity {
             Intent intent;
 
             if (RootUtil.isDeviceRooted() && RootUtil.isMagiskInstalled() && ModuleUtil.moduleExists() && OverlayUtils.overlayExists() && (versionCode == PrefConfig.loadPrefInt(this, "versionCode"))) {
-                keepShowing = false;
                 intent = new Intent(SplashActivity.this, HomePage.class);
             } else {
-                keepShowing = false;
                 intent = new Intent(SplashActivity.this, WelcomePage.class);
             }
 

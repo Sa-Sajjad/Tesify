@@ -18,5 +18,8 @@
     </string>
     <string name="version">v1.0 | Initial Release</string>
     <string name="toast_error">Something Wrong</string>
+    <string name="perm_storage_access">Grant storage first</string>
+    <string name="Tester">\@WxW22, @KiLLeRrN8, @BarikL, @chamanchutiyaAFK, @Guhdosrootx, @Zeetsone, @mydarkeyess, @Yogaishere</string>
+    <string name="installation_failed">Installation Failed!</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

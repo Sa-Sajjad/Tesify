@@ -33,12 +33,6 @@ public class BackgroundService extends Service {
 
         HomePage.isServiceRunning = true;
 
-//        Shell.getShell(shell -> {
-//            ApplyOnBoot.applyCornerRadius();
-//        });
-//
-//        startForeground();
-
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -58,7 +52,7 @@ public class BackgroundService extends Service {
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.uwu)
+                .setSmallIcon(R.drawable.ic_uwu)
                 .setContentTitle("Background Service")
                 .setContentText("Touch me, Please >.<")
                 .setContentIntent(pendingIntent)

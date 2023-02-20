@@ -1,8 +1,14 @@
 package kaerushi.weeabooify.uwuify.ui;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionManager;
@@ -14,6 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.topjohnwu.superuser.Shell;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -21,6 +31,7 @@ import java.util.Objects;
 import kaerushi.weeabooify.uwuify.BuildConfig;
 import kaerushi.weeabooify.uwuify.R;
 import kaerushi.weeabooify.uwuify.Weeabooify;
+import kaerushi.weeabooify.uwuify.common.References;
 import kaerushi.weeabooify.uwuify.config.PrefConfig;
 import kaerushi.weeabooify.uwuify.utils.ModuleUtil;
 import kaerushi.weeabooify.uwuify.utils.OverlayUtils;
@@ -46,6 +57,7 @@ public class WelcomePage extends AppCompatActivity {
         // Continue button
         Button checkRoot = findViewById(R.id.checkRoot);
 
+
         // Dialog to show if root not found
         LinearLayout warn = findViewById(R.id.warn);
         TextView warning = findViewById(R.id.warning);
@@ -57,10 +69,7 @@ public class WelcomePage extends AppCompatActivity {
         LinearLayout los_variant = findViewById(R.id.los_variant);
 
         nusa_variant.setOnClickListener(v -> {
-            warn.setVisibility(View.INVISIBLE);
-
             PrefConfig.savePrefSettings(Weeabooify.getAppContext(), "selectedRomVariant", "Nusan");
-            Toast.makeText(Weeabooify.getAppContext(), "Selected Nusantara", Toast.LENGTH_SHORT).show();
             nusa_variant.setBackground(getResources().getDrawable(R.drawable.container_selected));
             rr_variant.setBackground(getResources().getDrawable(R.drawable.container));
 
@@ -72,10 +81,7 @@ public class WelcomePage extends AppCompatActivity {
         });
 
         rr_variant.setOnClickListener(v -> {
-            warn.setVisibility(View.INVISIBLE);
-
             PrefConfig.savePrefSettings(Weeabooify.getAppContext(), "selectedRomVariant", "RR");
-            Toast.makeText(Weeabooify.getAppContext(), "Selected Resurrection Remix", Toast.LENGTH_SHORT).show();
             rr_variant.setBackground(getResources().getDrawable(R.drawable.container_selected));
             nusa_variant.setBackground(getResources().getDrawable(R.drawable.container));
 
@@ -96,49 +102,62 @@ public class WelcomePage extends AppCompatActivity {
 
         // Check for root onClick
         checkRoot.setOnClickListener(v -> {
-            warn.setVisibility(View.INVISIBLE);
             if (Objects.equals(PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant"), "null"))
                 Toast.makeText(Weeabooify.getAppContext(), "Select a ROM before proceeding", Toast.LENGTH_SHORT).show();
             else {
                 if (RootUtil.isDeviceRooted()) {
                     if (RootUtil.isMagiskInstalled()) {
-                        if ((PrefConfig.loadPrefInt(this, "versionCode") < versionCode) || !ModuleUtil.moduleExists() || !OverlayUtils.overlayExists()) {
-
-                            // Show spinner
-                            spinner.setVisibility(View.VISIBLE);
-
-                            // Block touch
-                            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
-                            Runnable runnable = () -> {
-                                try {
-                                    hasErroredOut = ModuleUtil.handleModule();
-                                } catch (IOException e) {
-                                    Toast.makeText(Weeabooify.getAppContext(), getResources().getString(R.string.toast_error), Toast.LENGTH_LONG).show();
-                                    hasErroredOut = true;
-                                    e.printStackTrace();
-                                }
-                                runOnUiThread(() -> {
-                                    // Hide spinner
-                                    spinner.setVisibility(View.GONE);
-                                    // Unblock touch
-                                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
-                                    if (PrefConfig.loadPrefInt(Weeabooify.getAppContext(), "versionCode") != 0)
-                                        Toast.makeText(getApplicationContext(), "Reboot to Apply Changes", Toast.LENGTH_LONG).show();
-                                });
-                            };
-                            Thread thread = new Thread(runnable);
-                            thread.start();
-                        }
-                        if (OverlayUtils.overlayExists()) {
-                            PrefConfig.savePrefInt(this, "versionCode", versionCode);
-                            Intent intent = new Intent(WelcomePage.this, HomePage.class);
-                            startActivity(intent);
-                            finish();
-                        } else {
+                        if (androidx.core.content.ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == android.content.pm.PackageManager.PERMISSION_DENIED || androidx.core.content.ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == android.content.pm.PackageManager.PERMISSION_DENIED) {
+                            androidx.core.app.ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE, android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1001);
                             warn.setVisibility(View.VISIBLE);
-                            warning.setText("Reboot your device first!");
+                            warning.setText("Grant storage access first!");
+                        } else {
+                            if ((PrefConfig.loadPrefInt(this, "versionCode") < versionCode) || !ModuleUtil.moduleExists() || !OverlayUtils.overlayExists()) {
+
+                                // Show spinner
+                                spinner.setVisibility(View.VISIBLE);
+
+                                // Block touch
+                                getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+                                Runnable runnable = () -> {
+                                    try {
+                                        hasErroredOut = ModuleUtil.handleModule();
+                                    } catch (IOException e) {
+                                        Toast.makeText(Weeabooify.getAppContext(), getResources().getString(R.string.toast_error), Toast.LENGTH_LONG).show();
+                                        hasErroredOut = true;
+                                        e.printStackTrace();
+                                    }
+                                    runOnUiThread(() -> {
+                                        // Hide spinner
+                                        spinner.setVisibility(View.GONE);
+                                        // Unblock touch
+                                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+                                        if (!hasErroredOut) {
+                                            if (OverlayUtils.overlayExists()) {
+                                                PrefConfig.savePrefInt(this, "versionCode", versionCode);
+                                                Intent intent = new Intent(WelcomePage.this, HomePage.class);
+                                                startActivity(intent);
+                                                finish();
+                                            } else {
+                                                warn.setVisibility(View.VISIBLE);
+                                                warning.setText("Reboot your device first!");
+                                            }
+                                        } else {
+                                            Shell.cmd("rm -rf " + References.MODULE_DIR).exec();
+                                            warning.setText(getResources().getString(R.string.installation_failed));
+                                            warn.setVisibility(View.VISIBLE);
+                                        }
+                                    });
+                                };
+                                Thread thread = new Thread(runnable);
+                                thread.start();
+                            } else {
+                                Intent intent = new Intent(WelcomePage.this, HomePage.class);
+                                startActivity(intent);
+                                finish();
+                            }
                         }
                     } else {
                         warn.setVisibility(View.VISIBLE);
