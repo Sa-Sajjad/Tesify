@@ -102,7 +102,7 @@ public class CompilerUtil {
 
         // Extract keystore and overlays from assets
         FileUtil.copyAssets("Keystore");
-        FileUtil.copyAssets("Overlays");
+        FileUtil.copyAssets("Overlays/" + PrefConfig.loadPrefSettings(Weeabooify.getAppContext(), "selectedRomVariant"));
 
         // Create temp directory
         Shell.cmd("rm -rf " + References.TEMP_DIR + "; mkdir -p " + References.TEMP_DIR).exec();
